@@ -149,26 +149,26 @@ namespace MetaSim {
         bool terminateSim = true;
 	
         if (nRuns < -1) {
-            cout << "Initialize stats" << endl;
+            cerr << "Initialize stats" << endl;
             initializeRuns = true;
             terminateSim = false;
             numRuns = 1;
             nRuns = -nRuns;
         }
         else if (nRuns == -1) {
-            cout << "Will not initialize stats" << endl;
+            cerr << "Will not initialize stats" << endl;
             initializeRuns = false;
             terminateSim = false;
             numRuns = 1;
         }
         else if (nRuns == 0) {
-            cout << "Last Sim in the batch" << endl;
+            cerr << "Last Sim in the batch" << endl;
             initializeRuns = false;
             terminateSim = true;
             numRuns = 1;	    
         }
         else if (nRuns == 1) {
-            cout << "One single run" << endl;
+            cerr << "One single run" << endl;
             initializeRuns = true;
             terminateSim = true; 
             numRuns = 1;	    
@@ -176,9 +176,9 @@ namespace MetaSim {
         else numRuns = nRuns;
 
         if (numRuns == 2) {
-            cout << "Warning: Simulation cannot be "
+            cerr << "Warning: Simulation cannot be "
                 "initialized with 2 runs" << endl;
-            cout << "         Executing 3 runs!" << endl;
+            cerr << "         Executing 3 runs!" << endl;
             numRuns = 3;
         }
 
@@ -189,7 +189,7 @@ namespace MetaSim {
         // while numRuns is the maximum number of runs.
         actRuns = 0;
         while (actRuns < numRuns) {
-            cout << "\n Run #" << actRuns << endl;
+            cerr << "\n Run #" << actRuns << endl;
 
             initSingleRun();
 
